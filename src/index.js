@@ -1,18 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-//import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
 
 const PLACES = [
-    { name: "Ижевск", zip: "426000" },
-    { name: "Москва", zip: "101000" },
-    { name: "Санкт-Петербург", zip: "190000" },
-    ];
+  { name: 'Ижевск', zip: '426000' },
+  { name: 'Москва', zip: '101000' },
+  { name: 'Санкт-Петербург', zip: '190000' }
+]
 
-
-    ReactDOM.render(<App  places={PLACES} />, document.getElementById('root'));
-
-
-
-//serviceWorker.unregister();
+ReactDOM.render(<App places={PLACES} />, document.getElementById('root'))

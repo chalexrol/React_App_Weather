@@ -23,17 +23,25 @@
     "@types/react-router-dom": "^5.1.2",
     "@types/redux-actions": "^2.6.1",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^3.2.0",
     "redux-logger": "^3.0.6",
+    "style-loader": "^1.0.0",
     "typescript": "^3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "css-loader": "^3.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -41,7 +49,6 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
-    "redux-thunk": "^2.3.0",
-    "style-loader": "^1.0.0"
+    "redux-thunk": "^2.3.0"
   }
 }
