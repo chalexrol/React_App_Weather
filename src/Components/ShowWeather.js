@@ -6,21 +6,19 @@ class ShowWeatherForm extends Component {
   }
 
   render () {
-  const weatherData =  this.props.weatherData
-    if (!weatherData) { return <div>Загрузка данных по температуре</div> }
-    const weather = weatherData.weather[0]
+  const weathData = this.props.weathData
+   if (!weathData) { return <div>Загрузка данных по температуре</div> }
+    const weather = weathData.weather[0]
     return (<div>
       <div className="w3-container w3-light-green">
         <h2>
-          {weather.main} в {weatherData.name}
-
+          {weather.main} в {weathData.name}
         </h2>
       </div>
-
-      <p>Текущая температура: {weatherData.main.temp}°</p>
-      <p>Самая высокая темп.: {weatherData.main.temp_max}°</p>
-      <p>Самая низкая темп.: {weatherData.main.temp_min}°</p>
-      <p>Скорость ветра: {weatherData.wind.speed} м/ч</p>
+      <p>Текущая температура: {weathData.main.temp}°</p>
+      <p>Самая высокая темп.: {weathData.main.temp_max}°</p>
+      <p>Самая низкая темп.: {weathData.main.temp_min}°</p>
+      <p>Скорость ветра: {weathData.wind.speed} м/ч</p>
     </div>)
   }
 }
@@ -46,7 +44,7 @@ function withGetWeather (Cmp) {
     }
 
     render() {
-      return <Cmp  weatherData={this.state.weatherData} />
+      return <Cmp  weathData={this.state.weatherData} />
     }
   };
 }
