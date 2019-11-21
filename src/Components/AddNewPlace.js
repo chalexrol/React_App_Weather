@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import {
   setZip,
   setCity
 } from './../actions/Actions';
+import { Link } from 'react-router-dom'
 
 let AddNewPlace = ({dispatch}) => {
   let input1,input2;
   return (
-      <div >
+      <div className="w3-card w3-margin w3-display-topmiddle">
         <div className="w3-container w3-red">
           <h2>Новый город</h2>
         </div>
@@ -41,13 +41,16 @@ let AddNewPlace = ({dispatch}) => {
                 placeholder="пр. 690000" 
              ></input>
           </p>
-          <input type="submit" value="Submit" />
+         <input type="submit" value="Submit" />
 
         </form>
+        <div>
+          <p>
+        <Link to="/" >Вернутся назад</Link>
+        </p>
       </div>
-  )
+      </div>
+ )
 }
 
-AddNewPlace = connect()(AddNewPlace)
-
-export default AddNewPlace
+export default AddNewPlace = connect()(AddNewPlace)

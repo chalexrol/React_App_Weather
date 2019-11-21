@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class ShowWeatherForm extends Component {
   constructor (props) {
@@ -7,8 +8,12 @@ class ShowWeatherForm extends Component {
 
   render () {
   const weathData = this.props.weathData
+ 
    if (!weathData) { return <div>Загрузка данных по температуре</div> }
     const weather = weathData.weather[0]
+    
+    const path= "/long/"+this.props.zip
+    console.log(path)
     return (<div>
       <div className="w3-container w3-light-green">
         <h2>
@@ -19,6 +24,9 @@ class ShowWeatherForm extends Component {
       <p>Самая высокая темп.: {weathData.main.temp_max}°</p>
       <p>Самая низкая темп.: {weathData.main.temp_min}°</p>
       <p>Скорость ветра: {weathData.wind.speed} м/ч</p>
+      <p></p>
+      <p></p>
+      <Link to={path} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 3 дня</Link>
     </div>)
   }
 }
@@ -44,7 +52,7 @@ function withGetWeather (Cmp) {
     }
 
     render() {
-      return <Cmp  weathData={this.state.weatherData} />
+      return <Cmp  weathData={this.state.weatherData} zip={this.props.zip}/>
     }
   };
 }

@@ -5,7 +5,7 @@ import {
 
 const initialState = {
   zip:['426000','101000', '190000'],
-  city: [ 'Izhevsk','Moscow','S.Peterburg'],
+  city: [ 'Izhevsk','Moscow','S.Petersburg'],
 };
 
 export const MainStore = (state = initialState, action) => {
