@@ -12,7 +12,7 @@ class App extends Component {
          <Switch>
             <Route exact path="/" component={MainForm} />
             <Route path="/new" component={AddNewPlace} />
-            <Route path="/long/:zipId" component={ShowMore} match={{params:"zipId"}} /> 
+            <Route path="/long/:zipId&cnt=:day" component={ShowMore} match={{params:['zipId','day']}} /> 
             <Route>
                <h1>Have no any match 404!</h1>
             </Route>

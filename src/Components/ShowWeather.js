@@ -26,7 +26,13 @@ class ShowWeatherForm extends Component {
       <p>Скорость ветра: {weathData.wind.speed} м/ч</p>
       <p></p>
       <p></p>
-      <Link to={path} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 3 дня</Link>
+      <Link to={path+"&cnt=3"} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 3 дня</Link>
+      <p></p>
+      <p></p>
+      <Link to={path+"&cnt=7"} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 7 дней</Link>
+      <p></p>
+      <p></p>
+      <Link to={path+"&cnt=10"} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 10 дней</Link>
     </div>)
   }
 }
