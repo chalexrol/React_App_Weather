@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class ShowWeatherForm extends Component {
   constructor (props) {
@@ -6,21 +7,32 @@ class ShowWeatherForm extends Component {
   }
 
   render () {
-  const weatherData =  this.props.weatherData
-    if (!weatherData) { return <div>Загрузка данных по температуре</div> }
-    const weather = weatherData.weather[0]
+  const weathData = this.props.weathData
+ 
+   if (!weathData) { return <div>Загрузка данных по температуре</div> }
+    const weather = weathData.weather[0]
+    
+    const path= "/long/"+this.props.zip
+    console.log(path)
     return (<div>
       <div className="w3-container w3-light-green">
         <h2>
-          {weather.main} в {weatherData.name}
-
+          {weather.main} в {weathData.name}
         </h2>
       </div>
-
-      <p>Текущая температура: {weatherData.main.temp}°</p>
-      <p>Самая высокая темп.: {weatherData.main.temp_max}°</p>
-      <p>Самая низкая темп.: {weatherData.main.temp_min}°</p>
-      <p>Скорость ветра: {weatherData.wind.speed} м/ч</p>
+      <p>Текущая температура: {weathData.main.temp}°</p>
+      <p>Самая высокая темп.: {weathData.main.temp_max}°</p>
+      <p>Самая низкая темп.: {weathData.main.temp_min}°</p>
+      <p>Скорость ветра: {weathData.wind.speed} м/ч</p>
+      <p></p>
+      <p></p>
+      <Link to={path+"&cnt=3"} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 3 дня</Link>
+      <p></p>
+      <p></p>
+      <Link to={path+"&cnt=7"} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 7 дней</Link>
+      <p></p>
+      <p></p>
+      <Link to={path+"&cnt=10"} className="w3-text-blue w3-button w3-light-green" >Посмотреть температуру на 10 дней</Link>
     </div>)
   }
 }
@@ -46,7 +58,7 @@ function withGetWeather (Cmp) {
     }
 
     render() {
-      return <Cmp  weatherData={this.state.weatherData} />
+      return <Cmp  weathData={this.state.weatherData} zip={this.props.zip}/>
     }
   };
 }
